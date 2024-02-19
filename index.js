@@ -58,7 +58,7 @@ const server = http.createServer(async (req, res) => {
         let responseFromApi =  await getResponse(url + req.url)
         let responseFromApiJson =  JSON.parse(responseFromApi)
         Todo.create(responseFromApiJson)
-          .then(() => res.end(`The object was joined in DB at #${responseFromApiJson.id}\n\n` + responseFromApi))
+          .then(() => res.end(`The object was saved in DB at #${responseFromApiJson.id}\n\n` + responseFromApi))
           .catch(err => {
             if (err.name in errorsList) {
               res.end(errorsList[err.name])
@@ -74,7 +74,7 @@ const server = http.createServer(async (req, res) => {
 sequelize.sync()
   .then( () => {
     server.listen(port, () => {
-      console.log(`Server is running on ${port}`)
+      console.log(`Server is running on localhost:${port}`)
     })
   })
   .catch(err => {
