@@ -5,7 +5,7 @@
 Клонировать репозиторий и перейти в него:
 
 ```
-git clone git@github.com:hardmikhail/node_test.git
+git clone https://github.com/hardmikhail/node_test.git
 ```
 
 ```
