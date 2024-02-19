@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    env_file: .env
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
+    ports:
+      - $POSTGRESDB_LOCAL_PORT:$POSTGRESDB_DOCKER_PORT
+  node:
+    image: hardmikhail/node_test
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    depends_on:
+      - postgres

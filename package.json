@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "mikhail",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.0.3",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.4",
     "pg": "^8.11.3",
-    "sequelize": "^6.36.0"
+    "sequelize": "^6.37.0"
   }
 }
